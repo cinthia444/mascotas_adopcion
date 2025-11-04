@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card shadow-sm mx-auto" style="max-width:820px;">
+  <div class="card-body">
+    <h3 class="card-title">Editar mascota</h3>
+    <form method="post" enctype="multipart/form-data" action="{{ url_for('edit', id=pet._id) }}">
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label">Nombre</label>
+          <input name="name" class="form-control" value="{{ pet.name }}" required>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Especie</label>
+          <input name="species" class="form-control" value="{{ pet.species }}" required>
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">Edad</label>
+          <input name="age" class="form-control" value="{{ pet.age }}" required>
+        </div>
+        <div class="col-md-8">
+          <label class="form-label">URL de la imagen (opcional)</label>
+          <input name="image" class="form-control" value="{{ pet.image }}">
+        </div>
+      </div>
+
+      <div class="mt-4 d-flex justify-content-end">
+        <a class="btn btn-outline-secondary me-2" href="{{ url_for('index') }}">Cancelar</a>
+        <button class="btn btn-primary">Actualizar</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

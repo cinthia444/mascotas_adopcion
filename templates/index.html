@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row g-3">
+  {% for pet in pets %}
+  <div class="col-12 col-sm-6 col-md-4">
+    <div class="card card-pet h-100">
+      <img src="{{ pet.image or url_for('static', filename='img/sample_pet.png') }}" class="card-img-top pet-img" alt="{{ pet.name }}">
+      <div class="card-body">
+        <h5 class="card-title">{{ pet.name }}</h5>
+        <p class="card-text small text-muted mb-1"><strong>Especie:</strong> {{ pet.species }}</p>
+        <p class="card-text small text-muted mb-1"><strong>Edad:</strong> {{ pet.age }}</p>
+        <div class="d-flex justify-content-between mt-3">
+          <a href="{{ url_for('edit', id=pet._id) }}" class="btn btn-outline-secondary btn-sm">Editar</a>
+          <form action="{{ url_for('delete', id=pet._id) }}" method="post" onsubmit="return confirm('¿Eliminar mascota?');">
+            <button class="btn btn-danger btn-sm">Eliminar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <div class="col-12">
+    <div class="empty-state p-5 text-center">
+      <h3>No hay mascotas aún</h3>
+      <p class="text-muted">Añade la primera mascota para que encuentre un hogar 🐶🐱</p>
+      <a href="{{ url_for('create') }}" class="btn btn-primary">Añadir mascota</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

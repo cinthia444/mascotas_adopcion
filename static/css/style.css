@@ -1,0 +1,49 @@
+
+/* Pastel & tierno theme for Mascotas adoptables */
+:root{
+  --soft-bg: #fffaf6;
+  --card-bg: #ffffff;
+  --muted: #6b7280;
+  --accent: #7dd3fc;
+  --accent-2: #ffb6c1;
+  --shadow: rgba(100,100,120,0.08);
+}
+
+body.bg-soft{
+  background: linear-gradient(135deg, #fffaf6 0%, #f0f7ff 100%);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #333;
+}
+
+.navbar{ background: transparent; }
+.logo-cute{
+  width:48px;height:48px;border-radius:10px;background:linear-gradient(180deg,var(--accent),var(--accent-2));
+  display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 6px 18px var(--shadow);
+}
+.brand-text h5{ font-weight:700; margin-left:8px; }
+
+.card-pet{
+  border: none;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px var(--shadow);
+  transition: transform .18s ease, box-shadow .18s ease;
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.8));
+}
+.card-pet:hover{ transform: translateY(-6px); box-shadow: 0 14px 40px var(--shadow); }
+
+.pet-img{ height:200px; object-fit: cover; background:#f6f6f8; }
+
+.empty-state{ background: rgba(255,255,255,0.8); border-radius:12px; box-shadow:0 6px 18px var(--shadow); }
+
+.card-title{ color:#222; font-weight:700; }
+
+.form-control{ border-radius:10px; box-shadow:none; border:1px solid #eee; padding:10px 12px; }
+
+.btn-primary{ background: linear-gradient(90deg,var(--accent),var(--accent-2)); border:none; box-shadow:0 8px 18px rgba(125,211,252,0.12); color:#fff; border-radius:10px; }
+.btn-outline-secondary{ border-radius:10px; }
+.btn-success{ border-radius:10px; background:#7dd3a6; border:none; color:#fff; }
+
+footer{ background: transparent; margin-top:40px; }
+
+.card.shadow-sm{ border-radius:12px; }
